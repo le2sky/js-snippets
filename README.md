@@ -2,6 +2,15 @@
 
 Small solutions to single well-defined problems.
 
+## TOC
+
+1. [Reference](#reference)
+2. [Snippets usage](#snippets-usage)
+   - [Get Value](#get-value)
+   - [Clamp](#clamp)
+   - [Sleep](#sleep)
+   - [Group by](#group-by)
+
 ## Reference
 
 This is the repository to store the code based on the article written by @henrik1
@@ -50,3 +59,27 @@ await sleep(1000); // waits 1 sec
 | Function | Parameter          | Description                                 |
 | :------- | :----------------- | :------------------------------------------ |
 | `sleep`  | duration: `number` | Wait the specified duration in milliseconds |
+
+---
+
+#### Group By
+
+keying-function에 따라 개체의 관련 항목을 그룹화하고 색인화합니다.
+
+```js
+groupBy(
+  (vehicle) => vehicle.make,
+  [
+    { make: "tesla", model: "3" },
+    { make: "tesla", model: "y" },
+    { make: "ford", model: "mach-e" },
+  ]
+);
+// {
+//   tesla: [ { make: 'tesla', ... }, { make: 'tesla', ... } ],
+//   ford: [ { make: 'ford', ... } ],
+```
+
+| Function  | Parameter                   | Description |
+| :-------- | :-------------------------- | :---------- |
+| `groupBy` | fn:`Function` list: `Array` |             |
