@@ -1,6 +1,6 @@
 # twenty-useful-js-snippets
 
-A brief description of what this project does and who it's for
+Small solutions to single well-defined problems.
 
 ## Reference
 
