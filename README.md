@@ -10,6 +10,7 @@ Small solutions to single well-defined problems.
    - [Clamp](#clamp)
    - [Sleep](#sleep)
    - [Group by](#group-by)
+   - [Collect by](#collect-by)
 
 ## Reference
 
@@ -80,6 +81,32 @@ groupBy(
 //   ford: [ { make: 'ford', ... } ],
 ```
 
-| Function  | Parameter                   | Description |
-| :-------- | :-------------------------- | :---------- |
-| `groupBy` | fn:`Function` list: `Array` |             |
+| Function  | Parameter                   | Description  |
+| :-------- | :-------------------------- | :----------- |
+| `groupBy` | fn:`Function` list: `Array` | return `obj` |
+
+---
+
+#### Collect By
+
+keying-function에 따라 관련 항목을 포함하는 하위 목록을 만듭니다.
+
+```js
+collectBy(
+  (vehicle) => vehicle.make,
+  [
+    { make: "tesla", model: "3" },
+    { make: "tesla", model: "y" },
+    { make: "ford", model: "mach-e" },
+  ]
+);
+
+// [
+//   [ { make: 'tesla', ... }, { make: 'tesla', ... } ],
+//   [ { make: 'ford', ... } ],
+// ]
+```
+
+| Function    | Parameter                   | Description             |
+| :---------- | :-------------------------- | :---------------------- |
+| `collectBy` | fn:`Function` list: `Array` | **groupBy is required** |
