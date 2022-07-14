@@ -23,6 +23,8 @@ getValue({ a: { b: { c: "d" } } }, "a.b.c"); // = d
 | :--------- | :---------------------------- | :------------------------------------ |
 | `getValue` | obj: `object`, path: `string` | if, vaild path return value else null |
 
+---
+
 #### clamp
 
 값이 지정된 범위 내에 있는지 확인하고, 지정된 범위에 값이 없다면 최소값과 최대값에 가장 가까운 값을 반환(클램프)합니다.
@@ -34,3 +36,17 @@ clamp(0, 10, -5); // = 0
 | Function | Parameter                                    | Description                    |
 | :------- | :------------------------------------------- | :----------------------------- |
 | `clamp`  | min: `number`, max: `number`, value:`number` | value or clamp value(min, max) |
+
+---
+
+#### Sleep
+
+다음 작업을 수행하기 전에 지정된 기간(밀리초)을 기다립니다.
+
+```js
+await sleep(1000); // waits 1 sec
+```
+
+| Function | Parameter          | Description                                 |
+| :------- | :----------------- | :------------------------------------------ |
+| `sleep`  | duration: `number` | Wait the specified duration in milliseconds |
