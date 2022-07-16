@@ -6,6 +6,7 @@
 
 1. [Reference](#reference)
 2. [Snippets usage](#snippets-usage)
+
    - [Get Value](#get-value)
    - [Clamp](#clamp)
    - [Sleep](#sleep)
@@ -21,6 +22,11 @@
    - [Distance](#distance)
    - [Drop While](#drop-while)
    - [Sum By](#sum-by)
+   - [Ascending](#ascending)
+   - [Descending](#descending)
+   - [Find Key](#find-key)
+   - [Bifurcate](#bifurcate-by)
+   - [Pipe](#pipe)
 
 ## Reference
 
