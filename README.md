@@ -94,7 +94,7 @@ groupBy(
 
 #### Collect By
 
-keying-function에 따라 관련 항목을 포함하는 하위 목록을 만듭니다.
+keying-function에 따라 관련 항목을 포함하는 하위 리스트를 만듭니다.
 
 ```js
 collectBy(
@@ -193,3 +193,24 @@ indexBy((val) => val.a, [{ a: 1 }, { a: 2 }, { a: 3 }]);
 | Function  | Parameter                    | Description        |
 | :-------- | :--------------------------- | :----------------- |
 | `indexBy` | fn: `Function` list: `Array` | return indexed obj |
+
+---
+
+#### Difference By
+
+첫 번째 매개변수인 리스트에서 두 번째 매개변수인 리스트에 없는 모든 항목을 찾아서 새로운 리스트를 반환합니다.
+
+> keying-function에 의해 결정됩니다.
+
+```js
+differenceBy((val) => val, [1, 2, 3], [3, 4, 5]); // = [1,2]
+differenceBy(
+  (vehicle) => vehicle.make,
+  [{ make: "tesla" }, { make: "ford" }, { make: "gm" }],
+  [{ make: "tesla" }, { make: "bmw" }, { make: "audi" }]
+); // = [{ make: 'ford' }, { make: 'gm' }]
+```
+
+| Function       | Parameter                                    | Description             |
+| :------------- | :------------------------------------------- | :---------------------- |
+| `differenceBy` | fn: `Function` listA: `Array` listB: `Array` | **indexBy is required** |
