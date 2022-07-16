@@ -231,3 +231,17 @@ recoverWith("A", () => {
 | `recoverWith` | defaultValue: `any` fn: `Function` | 두 번째 매개변수 이후의 매개변수는 주어진 함수의 매개변수입니다. |
 
 ---
+
+#### Distance
+
+두 점 p1과 p2 사이의 유클리드 거리를 계산합니다. (두 점사이의 거리 계산)
+
+```js
+distance([0, 1], [5, 4]); // = 5.8309518948453
+```
+
+| Function   | Parameter                               | Description           |
+| :--------- | :-------------------------------------- | :-------------------- |
+| `distance` | p1: `Array<number>` p2: `Array<number>` | 두 점사이의 거리 계산 |
+
+---
