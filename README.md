@@ -333,3 +333,18 @@ findKey((car) => !car.available, {
 | `findKey` | predicate: `Function`, index: `Object` | 만족하는 첫 번째 키 이름을 반환합니다. |
 
 ---
+
+#### Bifurcate By
+
+주어진 리스트의 값을 두 개의 리스트으로 나눕니다. 하나는 평가 함수가 참으로 평가되는 값을 포함하고 또 다른 리스트는 거짓인 값들을 포함합니다.
+
+```js
+bifurcateBy((val) => val > 0, [-1, 2, -3, 4]);
+// = [[2, 4], [-1, -3]]
+```
+
+| Function      | Parameter                            | Description              |
+| :------------ | :----------------------------------- | :----------------------- |
+| `bifurcateBy` | predicate: `Function`, list: `Array` | 2차원 배열을 리턴합니다. |
+
+---
