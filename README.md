@@ -405,3 +405,21 @@ isValidDate({}); // false
 | `isValidDate` | [args..]  | 주어진 매개변수가 유효한 date인지 확인합니다. |
 
 ---
+
+### Memoization
+
+memoization 테크닉을 이용해서 시간이 오래 걸리는 함수의 결과를 미리 저장합니다.
+
+```js
+const fibonacci = (n) => (n <= 1 ? 1 : fibonacci(n - 1) + fibonacci(n - 2));
+const memoizedFibonacci = memoize(fibonacci);
+
+for (let i = 0; i < 100; i++) fibonacci(30); // ~5000ms
+for (let i = 0; i < 100; i++) memoizedFibonacci(30); // ~50ms
+```
+
+| Function  | Parameter      | Description                        |
+| :-------- | :------------- | :--------------------------------- |
+| `memoize` | fn: `Function` | 주어진 함수의 결과를 저장해둡니다. |
+
+---
