@@ -110,3 +110,16 @@ collectBy(
 | Function    | Parameter                   | Description             |
 | :---------- | :-------------------------- | :---------------------- |
 | `collectBy` | fn:`Function` list: `Array` | **groupBy is required** |
+
+#### Head
+
+리스트의 첫 번째 요소를 가져옵니다. 이 함수는 깨끗하고 읽기 쉬운 코드를 작성하는 데 유용합니다.
+
+```js
+head([1, 2, 3]); // = 1
+head([]); // = undefined
+```
+
+| Function | Parameter     | Description                     |
+| :------- | :------------ | :------------------------------ |
+| `head`   | list: `Array` | return first value or undefiend |
