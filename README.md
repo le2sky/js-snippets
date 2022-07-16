@@ -245,3 +245,17 @@ distance([0, 1], [5, 4]); // = 5.8309518948453
 | `distance` | p1: `Array<number>` p2: `Array<number>` | 두 점사이의 거리 계산 |
 
 ---
+
+#### Drop While
+
+첫 번째 요소에서부터 시작하여 조건 함수가 충족될 때까지 목록에서 요소를 삭제합니다.
+
+```js
+dropWhile((val) => val < 5, [1, 2, 3, 4, 5, 6, 7]); // = [5,6,7]
+```
+
+| Function    | Parameter                      | Description                     |
+| :---------- | :----------------------------- | :------------------------------ |
+| `dropWhile` | pred: `Function` list: `Array` | 조건 충족 후 배열을 리턴합니다. |
+
+---
