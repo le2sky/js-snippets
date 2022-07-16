@@ -9,8 +9,13 @@ Small solutions to single well-defined problems.
    - [Get Value](#get-value)
    - [Clamp](#clamp)
    - [Sleep](#sleep)
-   - [Group by](#group-by)
-   - [Collect by](#collect-by)
+   - [Group By](#group-by)
+   - [Collect By](#collect-by)
+   - [Head](#head)
+   - [Tail](#tail)
+   - [Flatten](#flatten)
+   - [Intersection By](#intersection-by)
+   - [Index By](#index-by)
 
 ## Reference
 
@@ -110,3 +115,81 @@ collectBy(
 | Function    | Parameter                   | Description             |
 | :---------- | :-------------------------- | :---------------------- |
 | `collectBy` | fn:`Function` list: `Array` | **groupBy is required** |
+
+---
+
+#### Head
+
+리스트의 첫 번째 요소를 가져옵니다. 이 함수는 깨끗하고 읽기 쉬운 코드를 작성하는 데 유용합니다.
+
+```js
+head([1, 2, 3]); // = 1
+head([]); // = undefined
+```
+
+| Function | Parameter     | Description                     |
+| :------- | :------------ | :------------------------------ |
+| `head`   | list: `Array` | return first value or undefiend |
+
+---
+
+#### Tail
+
+리스트의 첫 번째 요소를 제외한 모든 요소를 ​​가져옵니다. 이 함수는 깨끗하고 읽기 쉬운 코드를 작성하는 데 유용합니다.
+
+```js
+tail([1, 2, 3]); // = [2, 3]
+tail([]); // = []
+```
+
+| Function | Parameter     | Description                               |
+| :------- | :------------ | :---------------------------------------- |
+| `tail`   | list: `Array` | return rest of list, except first element |
+
+---
+
+#### Flatten
+
+중첩된 하위 리스트에서 모든 항목을 재귀적으로 가져와서 플랫 리스트를 만듭니다.
+
+```js
+flatten([[1, 2, [3, 4], 5, [6, [7, 8]]]]); // = [1, 2, 3, 4, 5, 6, 7, 8]
+```
+
+| Function  | Parameter     | Description      |
+| :-------- | :------------ | :--------------- |
+| `flatten` | list: `Array` | return flat list |
+
+---
+
+#### Intersection By
+
+keying-function에 의해 정의된 대로 두 목록에 존재하는 모든 값을 찾습니다. (교집합)
+
+```js
+intersectionBy((v) => v, [1, 2, 3], [2, 3, 4]); // = [2, 3]
+intersectionBy(
+  (v) => v.a,
+  [{ a: 1 }, { a: 2 }],
+  [{ a: 2 }, { a: 3 }, { a: 4 }]
+); // = [{ a: 2 }];
+```
+
+| Function         | Parameter                                    | Description                 |
+| :--------------- | :------------------------------------------- | :-------------------------- |
+| `intersectionBy` | fn: `Function` listA: `Array` listB: `Array` | return Array\<intersection> |
+
+---
+
+#### Index By
+
+keying-function에 의해 `결정된 값`으로 리스트의 각 요소를 인덱싱합니다.
+
+```js
+indexBy((val) => val.a, [{ a: 1 }, { a: 2 }, { a: 3 }]);
+// = { 1: { a: 1 }, 2: { a:2 }, 3: { a: 3 } }
+```
+
+| Function  | Parameter                    | Description        |
+| :-------- | :--------------------------- | :----------------- |
+| `indexBy` | fn: `Function` list: `Array` | return indexed obj |
