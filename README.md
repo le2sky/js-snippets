@@ -283,3 +283,19 @@ sumBy(
 | `sumBy`  | fn: `Function` list: `Array` | 총합(`number`)을 리턴합니다. |
 
 ---
+
+#### Ascending
+
+평가 함수가 주어지면 오름차순으로 비교하는 함수를 만듭니다.
+
+```js
+const byPrice = ascending((val) => val.price);
+[{ price: 300 }, { price: 100 }, { price: 200 }].sort(byPrice);
+// = [{ price: 100 }, { price: 200 }, { price: 300 }]
+```
+
+| Function    | Parameter      | Description                          |
+| :---------- | :------------- | :----------------------------------- |
+| `ascending` | fn: `Function` | 평가함수는 비교할 속성을 리턴합니다. |
+
+---
