@@ -16,6 +16,11 @@
    - [Flatten](#flatten)
    - [Intersection By](#intersection-by)
    - [Index By](#index-by)
+   - [Difference By](#difference-by)
+   - [Recover With](#recover-with)
+   - [Distance](#distance)
+   - [Drop While](#drop-while)
+   - [Sum By](#sum-by)
 
 ## Reference
 
@@ -143,8 +148,6 @@ tail([]); // = []
 | Function | Parameter     | Description                                       |
 | :------- | :------------ | :------------------------------------------------ |
 | `tail`   | list: `Array` | 첫 번째 요소를 제외한 나머지의 배열을 리턴합니다. |
-
-## |
 
 #### Flatten
 
