@@ -27,11 +27,15 @@
    - [Find Key](#find-key)
    - [Bifurcate](#bifurcate-by)
    - [Pipe](#pipe)
+   - [isVaildJSON](#isvalidjson)
+   - [isVaildDate](#isvaliddate)
+   - [Memoization](#memoization)
 
 ## Reference
 
 - Henrik Larsen Toft's
   [20 JavaScript snippets that will make you a better developer](https://levelup.gitconnected.com/20-javascript-snippets-that-will-make-you-a-better-developer-68dfe4bf5019)
+- Angelos Chalaris' [30 seconds of code](https://www.30secondsofcode.org/)
 
 ## Snippets usage
 
