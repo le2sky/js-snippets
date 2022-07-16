@@ -296,6 +296,22 @@ const byPrice = ascending((val) => val.price);
 
 | Function    | Parameter      | Description                          |
 | :---------- | :------------- | :----------------------------------- |
-| `ascending` | fn: `Function` | 평가함수는 비교할 속성을 리턴합니다. |
+| `ascending` | fn: `Function` | 평가함수는 비교할 속성을 반환합니다. |
+
+---
+
+#### Descending
+
+평가 함수가 주어지면 내림차순으로 비교하는 함수를 만듭니다.
+
+```js
+const byPrice = descending((val) => val.price);
+[{ price: 300 }, { price: 100 }, { price: 200 }].sort(byPrice);
+// = [{ price: 300 }, { price: 200 }, { price: 100 }]
+```
+
+| Function     | Parameter      | Description                          |
+| :----------- | :------------- | :----------------------------------- |
+| `descending` | fn: `Function` | 평가함수는 비교할 속성을 반환합니다. |
 
 ---
