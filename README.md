@@ -1,6 +1,6 @@
 # useful-js-snippets
 
-유용한 자바스크립트 코드 조각들을 모아둔 repository 입니다.
+> 유용한 자바스크립트 코드 조각들을 모아 놓았습니다.
 
 ## TOC
 
@@ -254,8 +254,29 @@ distance([0, 1], [5, 4]); // = 5.8309518948453
 dropWhile((val) => val < 5, [1, 2, 3, 4, 5, 6, 7]); // = [5,6,7]
 ```
 
-| Function    | Parameter                      | Description                     |
-| :---------- | :----------------------------- | :------------------------------ |
-| `dropWhile` | pred: `Function` list: `Array` | 조건 충족 후 배열을 리턴합니다. |
+| Function    | Parameter                      | Description        |
+| :---------- | :----------------------------- | :----------------- |
+| `dropWhile` | pred: `Function` list: `Array` | 배열을 리턴합니다. |
+
+---
+
+#### Sum By
+
+각 요소의 개별 값을 발행하는 함수가 주어지면 리스트에 있는 모든 요소의 합을 계산합니다.
+
+```js
+sumBy(
+  (product) => product.price,
+  [
+    { name: "pizza", price: 10 },
+    { name: "pepsi", price: 5 },
+    { name: "salad", price: 5 },
+  ]
+); // = 20
+```
+
+| Function | Parameter                    | Description                  |
+| :------- | :--------------------------- | :--------------------------- |
+| `sumBy`  | fn: `Function` list: `Array` | 총합(`number`)을 리턴합니다. |
 
 ---
