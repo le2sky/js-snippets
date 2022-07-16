@@ -140,3 +140,17 @@ tail([]); // = []
 | Function | Parameter     | Description                               |
 | :------- | :------------ | :---------------------------------------- |
 | `tail`   | list: `Array` | return rest of list, except first element |
+
+---
+
+#### Flatten
+
+중첩된 하위 리스트에서 모든 항목을 재귀적으로 가져와서 플랫 리스트를 만듭니다.
+
+```js
+flatten([[1, 2, [3, 4], 5, [6, [7, 8]]]]); // = [1, 2, 3, 4, 5, 6, 7, 8]
+```
+
+| Function  | Parameter     | Description      |
+| :-------- | :------------ | :--------------- |
+| `flatten` | list: `Array` | return flat list |
