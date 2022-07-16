@@ -1,6 +1,6 @@
-# twenty-useful-js-snippets
+# useful-js-snippets
 
-Small solutions to single well-defined problems.
+유용한 자바스크립트 코드 조각들을 모아둔 repository 입니다.
 
 ## TOC
 
@@ -19,8 +19,6 @@ Small solutions to single well-defined problems.
 
 ## Reference
 
-This is the repository to store the code based on the article written by @henrik1
-
 - Henrik Larsen Toft's
   [20 JavaScript snippets that will make you a better developer](https://levelup.gitconnected.com/20-javascript-snippets-that-will-make-you-a-better-developer-68dfe4bf5019)
 
@@ -34,9 +32,9 @@ This is the repository to store the code based on the article written by @henrik
 getValue({ a: { b: { c: "d" } } }, "a.b.c"); // = d
 ```
 
-| Function   | Parameter                     | Description                           |
-| :--------- | :---------------------------- | :------------------------------------ |
-| `getValue` | obj: `object`, path: `string` | if, vaild path return value else null |
+| Function   | Parameter                     | Description                                             |
+| :--------- | :---------------------------- | :------------------------------------------------------ |
+| `getValue` | obj: `object`, path: `string` | 유효한 경로라면 값을 리턴하고 아니면 null을 리턴합니다. |
 
 ---
 
@@ -48,9 +46,9 @@ getValue({ a: { b: { c: "d" } } }, "a.b.c"); // = d
 clamp(0, 10, -5); // = 0
 ```
 
-| Function | Parameter                                    | Description                    |
-| :------- | :------------------------------------------- | :----------------------------- |
-| `clamp`  | min: `number`, max: `number`, value:`number` | value or clamp value(min, max) |
+| Function | Parameter                                    | Description                                             |
+| :------- | :------------------------------------------- | :------------------------------------------------------ |
+| `clamp`  | min: `number`, max: `number`, value:`number` | 주어진 값을 리턴하거나 최소값 혹은 최대값을 리턴합니다. |
 
 ---
 
@@ -62,9 +60,9 @@ clamp(0, 10, -5); // = 0
 await sleep(1000); // waits 1 sec
 ```
 
-| Function | Parameter          | Description                                 |
-| :------- | :----------------- | :------------------------------------------ |
-| `sleep`  | duration: `number` | Wait the specified duration in milliseconds |
+| Function | Parameter          | Description                    |
+| :------- | :----------------- | :----------------------------- |
+| `sleep`  | duration: `number` | 주어진 기간동안 딜레이 됩니다. |
 
 ---
 
@@ -86,9 +84,9 @@ groupBy(
 //   ford: [ { make: 'ford', ... } ],
 ```
 
-| Function  | Parameter                   | Description  |
-| :-------- | :-------------------------- | :----------- |
-| `groupBy` | fn:`Function` list: `Array` | return `obj` |
+| Function  | Parameter                   | Description                 |
+| :-------- | :-------------------------- | :-------------------------- |
+| `groupBy` | fn:`Function` list: `Array` | 그룹화된 객체를 반환합니다. |
 
 ---
 
@@ -112,9 +110,9 @@ collectBy(
 // ]
 ```
 
-| Function    | Parameter                   | Description             |
-| :---------- | :-------------------------- | :---------------------- |
-| `collectBy` | fn:`Function` list: `Array` | **groupBy is required** |
+| Function    | Parameter                   | Description                      |
+| :---------- | :-------------------------- | :------------------------------- |
+| `collectBy` | fn:`Function` list: `Array` | **groupBy에 의존성이 있습니다.** |
 
 ---
 
@@ -127,9 +125,9 @@ head([1, 2, 3]); // = 1
 head([]); // = undefined
 ```
 
-| Function | Parameter     | Description                     |
-| :------- | :------------ | :------------------------------ |
-| `head`   | list: `Array` | return first value or undefiend |
+| Function | Parameter     | Description                                    |
+| :------- | :------------ | :--------------------------------------------- |
+| `head`   | list: `Array` | 첫번째 값을 리턴하거나 undefiend를 리턴합니다. |
 
 ---
 
@@ -142,11 +140,11 @@ tail([1, 2, 3]); // = [2, 3]
 tail([]); // = []
 ```
 
-| Function | Parameter     | Description                               |
-| :------- | :------------ | :---------------------------------------- |
-| `tail`   | list: `Array` | return rest of list, except first element |
+| Function | Parameter     | Description                                       |
+| :------- | :------------ | :------------------------------------------------ |
+| `tail`   | list: `Array` | 첫 번째 요소를 제외한 나머지의 배열을 리턴합니다. |
 
----
+## |
 
 #### Flatten
 
@@ -156,9 +154,9 @@ tail([]); // = []
 flatten([[1, 2, [3, 4], 5, [6, [7, 8]]]]); // = [1, 2, 3, 4, 5, 6, 7, 8]
 ```
 
-| Function  | Parameter     | Description      |
-| :-------- | :------------ | :--------------- |
-| `flatten` | list: `Array` | return flat list |
+| Function  | Parameter     | Description                                     |
+| :-------- | :------------ | :---------------------------------------------- |
+| `flatten` | list: `Array` | 다차원 배열을 입력받아 1차원 배열을 리턴합니다. |
 
 ---
 
@@ -175,9 +173,9 @@ intersectionBy(
 ); // = [{ a: 2 }];
 ```
 
-| Function         | Parameter                                    | Description                 |
-| :--------------- | :------------------------------------------- | :-------------------------- |
-| `intersectionBy` | fn: `Function` listA: `Array` listB: `Array` | return Array\<intersection> |
+| Function         | Parameter                                    | Description               |
+| :--------------- | :------------------------------------------- | :------------------------ |
+| `intersectionBy` | fn: `Function` listA: `Array` listB: `Array` | 교집합 배열을 리턴합니다. |
 
 ---
 
@@ -190,9 +188,9 @@ indexBy((val) => val.a, [{ a: 1 }, { a: 2 }, { a: 3 }]);
 // = { 1: { a: 1 }, 2: { a:2 }, 3: { a: 3 } }
 ```
 
-| Function  | Parameter                    | Description        |
-| :-------- | :--------------------------- | :----------------- |
-| `indexBy` | fn: `Function` list: `Array` | return indexed obj |
+| Function  | Parameter                    | Description                 |
+| :-------- | :--------------------------- | :-------------------------- |
+| `indexBy` | fn: `Function` list: `Array` | 인덱스된 객체를 반환합니다. |
 
 ---
 
@@ -211,6 +209,25 @@ differenceBy(
 ); // = [{ make: 'ford' }, { make: 'gm' }]
 ```
 
-| Function       | Parameter                                    | Description             |
-| :------------- | :------------------------------------------- | :---------------------- |
-| `differenceBy` | fn: `Function` listA: `Array` listB: `Array` | **indexBy is required** |
+| Function       | Parameter                                    | Description               |
+| :------------- | :------------------------------------------- | :------------------------ |
+| `differenceBy` | fn: `Function` listA: `Array` listB: `Array` | **indexBy에 의존합니다.** |
+
+---
+
+#### Recover With
+
+주어진 함수에서 오류가 발생하면 기본값을 반환합니다.
+
+```js
+recoverWith("A", (val) => val, "B"); // = B
+recoverWith("A", () => {
+  throw new Error();
+}); // = 'A'
+```
+
+| Function      | Parameter                          | Description                                                      |
+| :------------ | :--------------------------------- | :--------------------------------------------------------------- |
+| `recoverWith` | defaultValue: `any` fn: `Function` | 두 번째 매개변수 이후의 매개변수는 주어진 함수의 매개변수입니다. |
+
+---
