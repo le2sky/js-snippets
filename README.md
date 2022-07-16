@@ -315,3 +315,21 @@ const byPrice = descending((val) => val.price);
 | `descending` | fn: `Function` | 평가함수는 비교할 속성을 반환합니다. |
 
 ---
+
+#### Find Key
+
+인덱스 내에서 주어진 조건을 만족하는 첫 번째 키를 반환합니다.
+
+```js
+findKey((car) => !car.available, {
+  tesla: { available: true },
+  ford: { available: false },
+  gm: { available: true },
+}); // = "ford"
+```
+
+| Function  | Parameter                              | Description                            |
+| :-------- | :------------------------------------- | :------------------------------------- |
+| `findKey` | predicate: `Function`, index: `Object` | 만족하는 첫 번째 키 이름을 반환합니다. |
+
+---
