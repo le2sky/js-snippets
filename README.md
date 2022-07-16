@@ -385,3 +385,23 @@ isValidJSON(null); // true
 | `isValidJSON` | str: `string` | JSON 문자열이 유효한지 검사합니다. |
 
 ---
+
+### isValidDate
+
+주어진 매개변수가 유효한 `date` 값인지 판단합니다.
+
+```js
+isValidDate("December 17, 1995 03:24:00"); // true
+isValidDate("1995-12-17T03:24:00"); // true
+isValidDate("1995-12-17 T03:24:00"); // false
+isValidDate("Duck"); // false
+isValidDate(1995, 11, 17); // true
+isValidDate(1995, 11, 17, "Duck"); // false
+isValidDate({}); // false
+```
+
+| Function      | Parameter | Description                                   |
+| :------------ | :-------- | :-------------------------------------------- |
+| `isValidDate` | [args..]  | 주어진 매개변수가 유효한 date인지 확인합니다. |
+
+---
