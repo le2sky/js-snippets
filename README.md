@@ -154,3 +154,22 @@ flatten([[1, 2, [3, 4], 5, [6, [7, 8]]]]); // = [1, 2, 3, 4, 5, 6, 7, 8]
 | Function  | Parameter     | Description      |
 | :-------- | :------------ | :--------------- |
 | `flatten` | list: `Array` | return flat list |
+
+---
+
+#### Intersection By
+
+keying-function에 의해 정의된 대로 두 목록에 존재하는 모든 값을 찾습니다. (교집합)
+
+```js
+intersectionBy((v) => v, [1, 2, 3], [2, 3, 4]); // = [2, 3]
+intersectionBy(
+  (v) => v.a,
+  [{ a: 1 }, { a: 2 }],
+  [{ a: 2 }, { a: 3 }, { a: 4 }]
+); // = [{ a: 2 }];
+```
+
+| Function         | Parameter                                    | Description                 |
+| :--------------- | :------------------------------------------- | :-------------------------- |
+| `intersectionBy` | fn: `Function` listA: `Array` listB: `Array` | return Array\<intersection> |
