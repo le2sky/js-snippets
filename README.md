@@ -30,12 +30,14 @@
    - [isVaildJSON](#isvalidjson)
    - [isVaildDate](#isvaliddate)
    - [Memoization](#memoization)
+   - [Curry](#curry)
 
 ## Reference
 
 - Henrik Larsen Toft's
   [20 JavaScript snippets that will make you a better developer](https://levelup.gitconnected.com/20-javascript-snippets-that-will-make-you-a-better-developer-68dfe4bf5019)
 - Angelos Chalaris' [30 seconds of code](https://www.30secondsofcode.org/)
+- [modern javascript tutorial](https://ko.javascript.info/)
 
 ## Snippets usage
 
@@ -425,5 +427,23 @@ for (let i = 0; i < 100; i++) memoizedFibonacci(30); // ~50ms
 | Function  | Parameter      | Description                        |
 | :-------- | :------------- | :--------------------------------- |
 | `memoize` | fn: `Function` | 주어진 함수의 결과를 저장해둡니다. |
+
+---
+
+### Curry
+
+다중 인자를 가진 함수를 커링된 함수로 변환합니다.
+
+```js
+let curriedSum = curry(sum);
+
+curriedSum(1, 2, 3); // 6
+curriedSum(1)(2, 3); // 6
+curriedSum(1)(2)(3); // 6
+```
+
+| Function | Parameter      | Description               |
+| :------- | :------------- | :------------------------ |
+| `curry`  | fn: `Function` | 주어진 함수를 커링합니다. |
 
 ---
