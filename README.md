@@ -111,6 +111,8 @@ collectBy(
 | :---------- | :-------------------------- | :---------------------- |
 | `collectBy` | fn:`Function` list: `Array` | **groupBy is required** |
 
+---
+
 #### Head
 
 리스트의 첫 번째 요소를 가져옵니다. 이 함수는 깨끗하고 읽기 쉬운 코드를 작성하는 데 유용합니다.
@@ -123,3 +125,18 @@ head([]); // = undefined
 | Function | Parameter     | Description                     |
 | :------- | :------------ | :------------------------------ |
 | `head`   | list: `Array` | return first value or undefiend |
+
+---
+
+#### Tail
+
+리스트의 첫 번째 요소를 제외한 모든 요소를 ​​가져옵니다. 이 함수는 깨끗하고 읽기 쉬운 코드를 작성하는 데 유용합니다.
+
+```js
+tail([1, 2, 3]); // = [2, 3]
+tail([]); // = []
+```
+
+| Function | Parameter     | Description                               |
+| :------- | :------------ | :---------------------------------------- |
+| `tail`   | list: `Array` | return rest of list, except first element |
