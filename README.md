@@ -369,3 +369,19 @@ pipe([(a, b) => a - b, Math.abs], 5, 10); // = 5
 | `pipe`   | functions: `Array<Function>`, [args...] | 함수 합성을 수행합니다. |
 
 ---
+
+#### isValidJSON
+
+주어진 JSON 문자열이 유효한지 판단합니다.
+
+```js
+isValidJSON('{"name":"Adam","age":20}'); // true
+isValidJSON('{"name":"Adam",age:"20"}'); // false
+isValidJSON(null); // true
+```
+
+| Function      | Parameter     | Description                        |
+| :------------ | :------------ | :--------------------------------- |
+| `isValidJSON` | str: `string` | JSON 문자열이 유효한지 검사합니다. |
+
+---
