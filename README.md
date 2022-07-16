@@ -348,3 +348,18 @@ bifurcateBy((val) => val > 0, [-1, 2, -3, 4]);
 | `bifurcateBy` | predicate: `Function`, list: `Array` | 2차원 배열을 리턴합니다. |
 
 ---
+
+#### Pipe
+
+왼쪽에서 오른쪽으로 함수 합성을 수행합니다. 첫 함수의 결과는 두 번째 함수에 전달되고 두 번째 결과는 세 번째 함수에 전달되는 식으로 모든 기능이 처리될 때까지 계속됩니다.
+
+```js
+pipe([Math.abs, Math.floor, (val) => -val], 4.2); // = -4
+pipe([(a, b) => a - b, Math.abs], 5, 10); // = 5
+```
+
+| Function | Parameter                               | Description             |
+| :------- | :-------------------------------------- | :---------------------- |
+| `pipe`   | functions: `Array<Function>`, [args...] | 함수 합성을 수행합니다. |
+
+---
