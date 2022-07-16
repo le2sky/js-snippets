@@ -5,4 +5,4 @@
  * @returns {number}
  */
 export const sumBy = (fn, list) =>
-  list.reduce((prev, next) => prev + fn(next) + 0);
+  list.reduce((prev, next) => prev + fn(next), 0);
