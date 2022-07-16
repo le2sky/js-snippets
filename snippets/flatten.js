@@ -3,7 +3,6 @@
  * @param {Array} list
  * @returns {Array}
  */
-
 export const flatten = (list) =>
   list.reduce(
     (prev, next) => [

@@ -9,8 +9,13 @@ Small solutions to single well-defined problems.
    - [Get Value](#get-value)
    - [Clamp](#clamp)
    - [Sleep](#sleep)
-   - [Group by](#group-by)
-   - [Collect by](#collect-by)
+   - [Group By](#group-by)
+   - [Collect By](#collect-by)
+   - [Head](#head)
+   - [Tail](#tail)
+   - [Flatten](#flatten)
+   - [Intersection By](#intersection-by)
+   - [Index By](#index-by)
 
 ## Reference
 
@@ -173,3 +178,18 @@ intersectionBy(
 | Function         | Parameter                                    | Description                 |
 | :--------------- | :------------------------------------------- | :-------------------------- |
 | `intersectionBy` | fn: `Function` listA: `Array` listB: `Array` | return Array\<intersection> |
+
+---
+
+#### Index By
+
+keying-function에 의해 `결정된 값`으로 리스트의 각 요소를 인덱싱합니다.
+
+```js
+indexBy((val) => val.a, [{ a: 1 }, { a: 2 }, { a: 3 }]);
+// = { 1: { a: 1 }, 2: { a:2 }, 3: { a: 3 } }
+```
+
+| Function  | Parameter                    | Description        |
+| :-------- | :--------------------------- | :----------------- |
+| `indexBy` | fn: `Function` list: `Array` | return indexed obj |
