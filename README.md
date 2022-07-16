@@ -27,11 +27,17 @@
    - [Find Key](#find-key)
    - [Bifurcate](#bifurcate-by)
    - [Pipe](#pipe)
+   - [isVaildJSON](#isvalidjson)
+   - [isVaildDate](#isvaliddate)
+   - [Memoization](#memoization)
+   - [Curry](#curry)
 
 ## Reference
 
 - Henrik Larsen Toft's
   [20 JavaScript snippets that will make you a better developer](https://levelup.gitconnected.com/20-javascript-snippets-that-will-make-you-a-better-developer-68dfe4bf5019)
+- Angelos Chalaris' [30 seconds of code](https://www.30secondsofcode.org/)
+- [modern javascript tutorial](https://ko.javascript.info/)
 
 ## Snippets usage
 
@@ -367,5 +373,77 @@ pipe([(a, b) => a - b, Math.abs], 5, 10); // = 5
 | Function | Parameter                               | Description             |
 | :------- | :-------------------------------------- | :---------------------- |
 | `pipe`   | functions: `Array<Function>`, [args...] | 함수 합성을 수행합니다. |
+
+---
+
+#### isValidJSON
+
+주어진 JSON 문자열이 유효한지 판단합니다.
+
+```js
+isValidJSON('{"name":"Adam","age":20}'); // true
+isValidJSON('{"name":"Adam",age:"20"}'); // false
+isValidJSON(null); // true
+```
+
+| Function      | Parameter     | Description                        |
+| :------------ | :------------ | :--------------------------------- |
+| `isValidJSON` | str: `string` | JSON 문자열이 유효한지 검사합니다. |
+
+---
+
+### isValidDate
+
+주어진 매개변수가 유효한 `date` 값인지 판단합니다.
+
+```js
+isValidDate("December 17, 1995 03:24:00"); // true
+isValidDate("1995-12-17T03:24:00"); // true
+isValidDate("1995-12-17 T03:24:00"); // false
+isValidDate("Duck"); // false
+isValidDate(1995, 11, 17); // true
+isValidDate(1995, 11, 17, "Duck"); // false
+isValidDate({}); // false
+```
+
+| Function      | Parameter | Description                                   |
+| :------------ | :-------- | :-------------------------------------------- |
+| `isValidDate` | [args..]  | 주어진 매개변수가 유효한 date인지 확인합니다. |
+
+---
+
+### Memoization
+
+memoization 테크닉을 이용해서 시간이 오래 걸리는 함수의 결과를 미리 저장합니다.
+
+```js
+const fibonacci = (n) => (n <= 1 ? 1 : fibonacci(n - 1) + fibonacci(n - 2));
+const memoizedFibonacci = memoize(fibonacci);
+
+for (let i = 0; i < 100; i++) fibonacci(30); // ~5000ms
+for (let i = 0; i < 100; i++) memoizedFibonacci(30); // ~50ms
+```
+
+| Function  | Parameter      | Description                        |
+| :-------- | :------------- | :--------------------------------- |
+| `memoize` | fn: `Function` | 주어진 함수의 결과를 저장해둡니다. |
+
+---
+
+### Curry
+
+다중 인자를 가진 함수를 커링된 함수로 변환합니다.
+
+```js
+let curriedSum = curry(sum);
+
+curriedSum(1, 2, 3); // 6
+curriedSum(1)(2, 3); // 6
+curriedSum(1)(2)(3); // 6
+```
+
+| Function | Parameter      | Description               |
+| :------- | :------------- | :------------------------ |
+| `curry`  | fn: `Function` | 주어진 함수를 커링합니다. |
 
 ---
